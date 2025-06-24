@@ -6,7 +6,7 @@ const doc = {
     description: 'API for managing Tasks',
     version: '1.0.0'
   },
-  host: 'cse341taskmanagement.onrender.com',
+  host: 'cse341taskmanagement-lif5.onrender.com',
   schemes: ['https'],
   consumes: ['application/json'],
   components: {
