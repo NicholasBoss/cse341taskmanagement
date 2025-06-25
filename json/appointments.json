@@ -1,16 +1,16 @@
-{
-  "appointment1": {
-    "userId" : "mongoDbId",
+[
+  {
+    "userId" : {"$oid": "685c1f67ecb3c5f1e6c06e3a"},
     "title": "Dentist Appointment",
     "description": "Routine cleaning at Dr. Smith’s clinic",
     "location": "Green Dental Clinic",
     "time": "2025-06-26T09:00:00"
   },
-  "appointment2": {
-    "userId" : "mongoDbId",
+  {
+    "userId" : {"$oid": "685c1f67ecb3c5f1e6c06e3a"},
     "title": "Zoom Meeting with Team",
     "description": "Discuss Q2 goals",
     "location": "Online",
     "time": "2025-06-24T14:30:00"
   }
-}
+]

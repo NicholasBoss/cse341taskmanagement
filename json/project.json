@@ -1,14 +1,14 @@
-{
-  "project1": {
-    "userId" : "mongoDbId",
+[
+  {
+    "userId" : {"$oid": "685c1f67ecb3c5f1e6c06e3a"},
     "name": "React Frontend",
     "description": "Build UI for task manager",
     "deadline": "2025-07-01"
   },
-  "project2": {
-    "userId" : "mongoDbId",
+  {
+    "userId" : {"$oid": "685c1f67ecb3c5f1e6c06e3a"},
     "name": "Node API",
     "description": "Develop REST API for backend",
     "deadline": "2025-07-05"
   }
-}
+]

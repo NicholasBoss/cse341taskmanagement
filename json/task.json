@@ -1,14 +1,14 @@
-{
-  "task1": {
-    "userId" : "mongoDbId",
+[
+  {
+    "userId" : {"$oid": "685c1f67ecb3c5f1e6c06e3a"},
     "title": "Buy groceries",
     "description": "Milk, Eggs, Bread, Fruits",
     "dueDateTime": "2025-06-24T10:00:00"
   },
-  "task2": {
-    "userId" : "mongoDbId",
+  {
+    "userId" : {"$oid": "685c1f67ecb3c5f1e6c06e3a"},
     "title": "Finish project report",
     "description": "Complete the final section and email to supervisor",
     "dueDateTime": "2025-06-25T16:00:00"
   }
-}
+]
