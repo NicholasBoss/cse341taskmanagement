@@ -1,0 +1,14 @@
+{
+  "task1": {
+    "userId" : "mongoDbId",
+    "title": "Buy groceries",
+    "description": "Milk, Eggs, Bread, Fruits",
+    "dueDateTime": "2025-06-24T10:00:00"
+  },
+  "task2": {
+    "userId" : "mongoDbId",
+    "title": "Finish project report",
+    "description": "Complete the final section and email to supervisor",
+    "dueDateTime": "2025-06-25T16:00:00"
+  }
+}

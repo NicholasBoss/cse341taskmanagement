@@ -1,0 +1,23 @@
+
+[
+  {
+    "userName": "mc159",
+    "firstName": "Mark",
+    "lastName": "Calla",
+    "email": "mark.calla.159@test.com",
+    "city": "Idaho",
+    "phone":"000-000-00",
+    "gitHubUser": "MarkCalla159"
+  },
+  {
+    "userName": "Tef001",
+    "firstName": "Estefany",
+    "lastName": "Calla",
+    "email": "tef2009@test.com",
+    "city": "Tacna",
+    "phone":"000-000-00",
+    "gitHubUser": "TefProd123"
+  }
+]
+ 
+
