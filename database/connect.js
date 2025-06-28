@@ -12,7 +12,7 @@ const initDb = async () => {
 
   try {
     const client = await MongoClient.connect(mongoURL);
-    _db = client;
+    _db = client.db();
     console.log('Database connected successfully!');
     return _db;
   } catch (error) {
