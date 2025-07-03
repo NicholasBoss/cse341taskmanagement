@@ -4,7 +4,7 @@ const routes = express.Router();
 const swaggerRoutes = require('./swagger');
 const appointmentRoutes = require('./appointmentRoutes');
 const userRoutes = require('./userRoutes');
-// const taskRoutes = require('./taskRoutes');
+const taskRoutes = require('./taskRoutes');
 // const projectRoutes = require('./projectRoutes');
 
 routes.get('/', (req, res) => {
@@ -14,7 +14,7 @@ routes.get('/', (req, res) => {
 routes.use('/', swaggerRoutes);
 routes.use('/appointments', appointmentRoutes);
 routes.use('/users', userRoutes);
-// routes.use('/tasks', taskRoutes);
+routes.use('/tasks', taskRoutes);
 // routes.use('/projects', projectRoutes);
 
 module.exports = routes;
