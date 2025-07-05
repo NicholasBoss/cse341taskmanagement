@@ -5,10 +5,13 @@
     "description": "API for managing Tasks",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://cse341taskmanagement-lif5.onrender.com/"
-    }
+  "host": "cse341taskmanagement-lif5.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
   ],
   "paths": {
     "/": {
@@ -137,25 +140,6 @@
       },
       "post": {
         "description": "",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "userName": {"type": "string","example": "mc159"},
-                  "firstName": {"type": "string","example": "Mark"},
-                  "lastName": {"type": "string","example": "Calla"},
-                  "email": {"type": "string","example": "mark.calla.159@test.com"},
-                  "city": {"type": "string","example": "Idaho"},
-                  "phone": {"type": "string","example": "000-000-00"},
-                  "gitHubUser": {"type": "string","example": "MarkCalla159"}
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "201": {
             "description": "Created"
@@ -248,15 +232,15 @@
       },
       "post": {
         "description": "",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
                 "userId": {
-                  "example": "User ObjectId"
+                  "example": "any"
                 },
                 "title": {
                   "example": "any"
@@ -265,14 +249,12 @@
                   "example": "any"
                 },
                 "dueDateTime": {
-                  "example": "2025-06-25T16:00:00"
+                  "example": "any"
                 }
-              }
               }
             }
           }
-        },
-        
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -287,6 +269,98 @@
       }
     },
     "/tasks/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/projects/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/projects/{id}": {
       "get": {
         "description": "",
         "parameters": [
