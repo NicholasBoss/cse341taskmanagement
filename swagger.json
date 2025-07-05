@@ -5,13 +5,10 @@
     "description": "API for managing Tasks",
     "version": "1.0.0"
   },
-  "host": "cse341taskmanagement-lif5.onrender.com",
-  "basePath": "/",
-  "schemes": [
-    "https"
-  ],
-  "consumes": [
-    "application/json"
+  "servers": [
+    {
+      "url": "https://cse341taskmanagement-lif5.onrender.com/"
+    }
   ],
   "paths": {
     "/": {
@@ -140,6 +137,25 @@
       },
       "post": {
         "description": "",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userName": {"type": "string","example": "mc159"},
+                  "firstName": {"type": "string","example": "Mark"},
+                  "lastName": {"type": "string","example": "Calla"},
+                  "email": {"type": "string","example": "mark.calla.159@test.com"},
+                  "city": {"type": "string","example": "Idaho"},
+                  "phone": {"type": "string","example": "000-000-00"},
+                  "gitHubUser": {"type": "string","example": "MarkCalla159"}
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "201": {
             "description": "Created"
@@ -232,15 +248,15 @@
       },
       "post": {
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
                 "userId": {
-                  "example": "any"
+                  "example": "User ObjectId"
                 },
                 "title": {
                   "example": "any"
@@ -249,12 +265,14 @@
                   "example": "any"
                 },
                 "dueDateTime": {
-                  "example": "any"
+                  "example": "2025-06-25T16:00:00"
                 }
+              }
               }
             }
           }
-        ],
+        },
+        
         "responses": {
           "201": {
             "description": "Created"
