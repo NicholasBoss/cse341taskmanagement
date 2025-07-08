@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://cse341taskmanagement-lif5.onrender.com/"
+      "url": "localhost:3000"
     }
   ],
   "paths": {
