@@ -18,6 +18,7 @@ beforeAll(async () => {
   await initDb();
 });
 
+// Set up the Express app and create routes for testing
 beforeEach(() => {
   app = express();
   app.use(express.json());
@@ -28,6 +29,7 @@ beforeEach(() => {
   app.delete('/appointments/:id', deleteAppointment);
 });
 
+// Close the database connection after all tests
 afterAll(async () => {
   const db = getDb();
   await db.client.close();
