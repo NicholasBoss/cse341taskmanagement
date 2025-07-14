@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const util = require('../utilities');
 
 const {
     getAllAppointments,
@@ -9,10 +10,10 @@ const {
     deleteAppointment
 } = require('../controllers/appointmentController');
 
-router.get('/', getAllAppointments);
-router.get('/:id', getAppointmentById);
-router.post('/', createAppointment);
-router.put('/:id', updateAppointment);
-router.delete('/:id', deleteAppointment);
+router.get('/', util.handleErrors(getAllAppointments));
+router.get('/:id', util.handleErrors(getAppointmentById));
+router.post('/', util.handleErrors(createAppointment));
+router.put('/:id', util.handleErrors(updateAppointment));
+router.delete('/:id', util.handleErrors(deleteAppointment));
 
 module.exports = router;
