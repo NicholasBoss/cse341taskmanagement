@@ -9,10 +9,13 @@ const {
     deleteProject,
 } = require('../controllers/projectController');
 
+const { projectValidationRules } = require('../validators/projectValidator');
+const { validate } = require('../validators/validate');
+
 router.get('/', getAllProjects);
 router.get('/:id', getProjectById);
-router.post('/', createProject);
-router.put('/:id', updateProject);
+router.post('/', projectValidationRules(), validate, createProject);
+router.put('/:id', projectValidationRules(), validate, updateProject);
 router.delete('/:id', deleteProject);
 
 module.exports = router;
