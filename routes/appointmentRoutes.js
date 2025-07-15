@@ -10,10 +10,14 @@ const {
     deleteAppointment
 } = require('../controllers/appointmentController');
 
+const util = require('../utilities');
+const { appointmentValidationRules } = require('../validators/appointmentValidator');
+const { validate } = require('../validators/validate');
+
 router.get('/', util.handleErrors(getAllAppointments));
 router.get('/:id', util.handleErrors(getAppointmentById));
-router.post('/', util.handleErrors(createAppointment));
-router.put('/:id', util.handleErrors(updateAppointment));
+router.post('/', appointmentValidationRules(), validate, util.handleErrors(createAppointment));
+router.put('/:id', appointmentValidationRules(), validate, util.handleErrors(updateAppointment));
 router.delete('/:id', util.handleErrors(deleteAppointment));
 
 module.exports = router;
