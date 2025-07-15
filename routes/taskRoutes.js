@@ -9,13 +9,14 @@ const {
     deleteTask,
 } = require('../controllers/taskController');
 
+const util = require('../utilities');
 const { taskValidationRules } = require('../validators/taskValidator');
 const { validate } = require('../validators/validate');
 
-router.get('/', getAllTasks);
-router.get('/:id', getTasksById);
-router.post('/', taskValidationRules(), validate, createTask);
-router.put('/:id', taskValidationRules(), validate, updateTask);
-router.delete('/:id', deleteTask);
+router.get('/', util.handleErrors(getAllTasks));
+router.get('/:id', util.handleErrors(getTasksById));
+router.post('/', taskValidationRules(), validate, util.handleErrors(createTask));
+router.put('/:id', taskValidationRules(), validate, util.handleErrors(updateTask));
+router.delete('/:id', util.handleErrors(deleteTask));
 
 module.exports = router;
