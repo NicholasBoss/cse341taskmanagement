@@ -1,0 +1,34 @@
+<!-- public/oauth2-redirect.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OAuth2 Redirect</title>
+</head>
+<body>
+  <script>
+    'use strict';
+    function run() {
+      var oauth2 = window.opener.swaggerUIRedirectOauth2;
+      var sentState = oauth2.state;
+      var redirectUrl = window.location.href;
+
+      var params = {};
+      var queryString = redirectUrl.split('?')[1];
+      if (queryString) {
+        var regex = /([^&=]+)=([^&]*)/g, m;
+        while ((m = regex.exec(queryString)) !== null) {
+          params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+        }
+      }
+
+      if (params.state !== sentState) {
+        console.error('OAuth2 state mismatch');
+      }
+
+      oauth2.callback(redirectUrl);
+      window.close();
+    }
+    window.onload = run;
+  </script>
+</body>
+</html>
