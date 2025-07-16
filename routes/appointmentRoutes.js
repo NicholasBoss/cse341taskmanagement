@@ -12,11 +12,12 @@ const {
 const util = require('../utilities');
 const { appointmentValidationRules } = require('../validators/appointmentValidator');
 const { validate } = require('../validators/validate');
+const authenticateToken = require('../utilities/verifyGoogleToken');
 
 router.get('/', util.handleErrors(getAllAppointments));
 router.get('/:id', util.handleErrors(getAppointmentById));
-router.post('/', appointmentValidationRules(), validate, util.handleErrors(createAppointment));
-router.put('/:id', appointmentValidationRules(), validate, util.handleErrors(updateAppointment));
-router.delete('/:id', util.handleErrors(deleteAppointment));
+router.post('/', authenticateToken, appointmentValidationRules(), validate, util.handleErrors(createAppointment));
+router.put('/:id', authenticateToken, appointmentValidationRules(), validate, util.handleErrors(updateAppointment));
+router.delete('/:id', authenticateToken, util.handleErrors(deleteAppointment));
 
 module.exports = router;

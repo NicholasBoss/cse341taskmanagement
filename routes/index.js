@@ -35,9 +35,9 @@ routes.get('/logout', (req, res) => {
 });
 
 routes.use('/', swaggerRoutes);
-routes.use('/appointments', authenticateToken, appointmentRoutes);
-routes.use('/users', authenticateToken, userRoutes);
-routes.use('/tasks', authenticateToken, taskRoutes);
-routes.use('/projects', authenticateToken, projectRoutes);
+routes.use('/appointments', appointmentRoutes);
+routes.use('/users', userRoutes);
+routes.use('/tasks', taskRoutes);
+routes.use('/projects', projectRoutes);
 
 module.exports = routes;

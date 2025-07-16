@@ -12,11 +12,12 @@ const {
 const util = require('../utilities');
 const { projectValidationRules } = require('../validators/projectValidator');
 const { validate } = require('../validators/validate');
+const authenticateToken = require('../utilities/verifyGoogleToken');
 
 router.get('/', util.handleErrors(getAllProjects));
 router.get('/:id', util.handleErrors(getProjectById));
-router.post('/', projectValidationRules(), validate, util.handleErrors(createProject));
-router.put('/:id', projectValidationRules(), validate, util.handleErrors(updateProject));
-router.delete('/:id', util.handleErrors(deleteProject));
+router.post('/', authenticateToken, projectValidationRules(), validate, util.handleErrors(createProject));
+router.put('/:id', authenticateToken, projectValidationRules(), validate, util.handleErrors(updateProject));
+router.delete('/:id', authenticateToken, util.handleErrors(deleteProject));
 
 module.exports = router;
