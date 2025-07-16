@@ -85,6 +85,23 @@
       },
       "post": {
         "description": "",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {"type": "string","example": "User ObjectId"},
+                  "title": {"type": "string","example": "Meeting with client"},
+                  "description": {"type": "string","example": "Discuss project requirements"},
+                  "location": {"type": "string","example": "Conference Room A"},
+                  "time": {"type": "string","format": "date-time","example": "2025-06-25T16:00:00"}
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "201": {
             "description": "Created"
@@ -128,6 +145,22 @@
             "type": "string"
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {"type": "string","example": "Meeting with client"},
+                  "description": {"type": "string","example": "Discuss project requirements"},
+                  "location": {"type": "string","example": "Conference Room A"},
+                  "time": {"type": "string","format": "date-time","example": "2025-06-25T16:00:00"}
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -239,6 +272,25 @@
             "type": "string"
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userName": {"type": "string","example": "mc159"},
+                  "firstName": {"type": "string","example": "Mark"},
+                  "lastName": {"type": "string","example": "Calla"},
+                  "email": {"type": "string","example": "mark.calla.159@test.com"},
+                  "city": {"type": "string","example": "Idaho"},
+                  "phone": {"type": "string","example": "000-000-00"},
+                  "gitHubUser": {"type": "string","example": "MarkCalla159"}
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -359,6 +411,30 @@
             "type": "string"
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "example": "User ObjectId"
+                  },
+                  "title": {
+                    "example": "any"
+                  },
+                  "description": {
+                    "example": "any"
+                  },
+                  "dueDateTime": {
+                    "example": "2025-06-25T16:00:00"
+                  }
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -408,6 +484,22 @@
       },
       "post": {
         "description": "",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {"type": "string","example": "User ObjectId"},
+                  "name": {"type": "string","example": "Project Alpha"},
+                  "description": {"type": "string","example": "Description of Project Alpha"},
+                  "deadline": {"type": "string","format": "date-time","example": "2025-06-01T00:00:00"}
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "201": {
             "description": "Created"
@@ -451,6 +543,22 @@
             "type": "string"
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {"type": "string","example": "User ObjectId"},
+                  "name": {"type": "string","example": "Project Alpha"},
+                  "description": {"type": "string","example": "Description of Project Alpha"},
+                  "deadline": {"type": "string","format": "date-time","example": "2025-06-01T00:00:00"}
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
